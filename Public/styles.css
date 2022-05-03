@@ -144,22 +144,55 @@ header {
 .left-section {
   height: 85vh;
   width: 33vw;
-  background-color: red;
+  background-color: aqua;
 }
 
 .middle-section {
   height: 85vh;
   width: 34vw;
-  background-color: blue;
+  background-color: aqua;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
 .right-section {
   height: 85vh;
   width: 33vw;
-  background-color: yellow;
+  background-color: aqua;
+  display: flex;
+  align-items: flex-end;
 }
 
 footer {
   width: 100vw;
   height: 5vh;
+}
+
+.monster__container {
+  display: flex;
+  height: 70vh;
+  width: 50%;
+  margin: 100px 100px 100px 150px;
+  background-color: gray;
+  border-radius: 30px;
+}
+
+.monster_info_container {
+  display: flex;
+  height: 500px;
+  width: 300px;
+
+  background-color: gray;
+  border-radius: 30px;
+}
+
+.result_container {
+  display: flex;
+  height: 300px;
+  width: 50%;
+  background-color: grey;
+  border-radius: 30px;
+  margin: 0px 0px 30px;
 }

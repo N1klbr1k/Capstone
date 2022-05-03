@@ -66,7 +66,30 @@ module.exports = {
                   ('Elk', 13, 10, '50 ft.', '1/4', 'Charge. If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7(2d6) damage. If the target is a creature, it must succeed on a dc 13 strength saving throw or be knocked prone.'),
                   ('Giant Dragonfly', 22, 16, '10 ft., fly 60 ft.', '1/2', 'Drone. When it beats it wings, the dragonfly emits a load droning sound that can be heard out to a range of 120 feet. reaction: uncanny dodge.'),
                   ('Giant Eagle', 26, 13, '10 ft. fly 80 ft.', '1', 'Keen sight. Adv on perception checks that rely on sight. The giant eagle is a noble creature that speaks its own language and understands speech in the common tongue.'),
-                  (')
+                  ('wolf',11,13,'40ft.','1/4','Keen hearing and smell. pack tactics'),
+                  ('velociraptor',10, 13,'30ft.','1/4','pack tactics. This feathered dinosaur is about the size of a large turkey. It is an aggresive predator that often hunts in packs to bring down larger prey.');
+
+            INSERT INTO stats(creature_id, strength, dex, con, intell, wis, char)
+            VALUES(),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  ();
+
+            INSERT INTO images(creature_id, imageURL, alt_text)
+            VALUES(),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
+                  (),
          `);
   },
   getCreature: (req, res) => {

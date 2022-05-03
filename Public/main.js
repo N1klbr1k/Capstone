@@ -22,3 +22,7 @@ const getCreature = (id) => {
     .then((res) => {})
     .catch((err) => console.log(err));
 };
+//gets all creatures so they can be displayed in the drop down
+const getAllCreatures = () => {
+
+}
