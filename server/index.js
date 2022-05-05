@@ -1,18 +1,22 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
 const { SERVER_PORT } = process.env;
-const { seed, getCreature, createCreature } = require("./controller.js");
+const { seed, getCreature, createCreature,getAllCreatures } = require("./controller.js");
 
 app.use(express.json());
+app.use(cors());
 
 //seed the database
-app.post("/seed", seed);
+//app.post("/seed", seed);
 
 //get a creature
-app.get("/creature/:id", getCreature);
-
+app.get("/creatures/:id", getCreature);
+//get all creatures
+app.get('/creatures',getAllCreatures);
 //create a creature
-app.post("/creature", createCreature);
+//app.post("/creatures", createCreature);
 
 app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`));

@@ -110,12 +110,12 @@ module.exports = {
           (9, 'Claws', 4, 4, 1, 'The target is raked by the raptors claws' );
          `);
   },
+  //a test
   getCreature: (req, res) => {
-    sequelize
-      .query(
-        `
-       SELECT * FROM CREATURES
-       WHERE creature_id = ${req.params.id};
+    sequelize.query(
+        `SELECT creatures.creature_name AS name, creatures.creature_hp AS hp,creatures.creature_ac, creatures.creature_speed,creatures.creature_cr,creatures.description,images.imageURL  FROM creatures
+        Join images On creatures.creature_id = images.creature_id
+       WHERE creatures.creature_id = ${req.params.id};
        `
       )
       .then((dbRes) => {
@@ -123,4 +123,11 @@ module.exports = {
       })
       .catch((err) => console.log(err)); //change console to rollbar when app goes live
   },
+  getAllCreatures: (req, res) => {
+    sequelize.query(`
+      SELECT * FROM creatures;
+    `).then(dbRes => {
+      res.status(200).send(dbRes[0])
+    }).catch((err) => console.log(err))
+  }
 };

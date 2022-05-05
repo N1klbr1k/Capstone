@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Run the Pack</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d48c78e087.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
-      <div id="left stuff">
+      <div id="left_stuff">
+        <i class="fa-brands fa-wolf-pack-battalion"></i>
         <h1>RUN THE PACK</h1>
       </div>
-      <div id="right stuff">
+      <div class="right_stuff">
         <p>about</p>
         <p>Add Beast</p>
       </div>
@@ -20,18 +22,63 @@
     <section class="left-section">
       <div class="monster__container">
         <div class="add_monster_div">
-          <select class="monster-select">
-            <option value="none">none</option>
-          </select>
-          <button>+</button>
+          <form id="monster_form">
+            <select id="monster-select">
+              <option value="0">none</option>
+              
+            </select>
+            <input type="submit" value="+" />
+          </form>
         </div>
       </div>
     </section>
     <section class="middle-section">
-      <div class="monster_info_container"></div>
+      <div class="monster_info_container">
+        <div id="monstName">gjhgkhjhkjhkjhjhjhgjhgjhgjhgjhg</div>
+        
+          <img id="monstPic">
+          <div class="monstStats">
+            <div id="str"><p>str</p>
+              <div id="strNum"></div>
+            </div> 
+            <div id="dex">
+              <p>dex</p>
+              <div id="dexNum"></div>
+            </div>
+            <div id="con">
+              <p>con</p>
+              <div id="conNum"></div>
+            </div>
+            <div id="int">
+              <p>int</p>
+              <div id="intNum"></div>
+            </div>
+            <div id="wis">
+              <p>wis</p>
+              <div id="wisNum"></div>
+            </div>
+            <div id="char">
+              <p>char</p>
+              <div id="charNum"></div>
+            </div>
+          </div>
+        
+        <div class="monst_desc">
+          lksdjfkgkjhjhkhjhkhjkhkhjhjkhkhjkhhjkh
+          khhkjhkjhjkhkhjhkjjalsdkjf;lajsdfkja;kd
+          sfjkljlkdjsfakljdlfjlaksdj
+          ladsjflkjalsdkjfljadsjfkjalskdjf
+          lajdsflksjadkljfalksjdflkja
+          alsdjfalskdjflkajldkfjajdsflajdsklf
+          lasdkjflkasdjflkjaldsjflajsdlfjasdjfj
+          ladsjflkajsdlfkjalksdjflkajsdlfkjalkj
+          ;adsflkajsdlfjlkasdjflkajdsflkdjl
+        </div>
+      </div>
       <div class="attack_button_container">
         <button class="attack_button">
           <h2>Attack!</h2>
+          <i class="fa-solid fa-dice-d20" id="dice"></i>
         </button>
       </div>
     </section>
