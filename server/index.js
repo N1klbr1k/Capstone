@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const { SERVER_PORT } = process.env;
-const { seed, getCreature, createCreature,getAllCreatures } = require("./controller.js");
+const { seed, getCreature, createCreature,getAllCreatures,getAttack } = require("./controller.js");
 
 app.use(express.json());
 app.use(cors());
@@ -14,6 +14,8 @@ app.use(cors());
 
 //get a creature
 app.get("/creatures/:id", getCreature);
+//get attack info
+app.get("/attacks/:id", getAttack)
 //get all creatures
 app.get('/creatures',getAllCreatures);
 //create a creature

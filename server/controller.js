@@ -113,7 +113,7 @@ module.exports = {
   //a test
   getCreature: (req, res) => {
     sequelize.query(
-        `SELECT creatures.creature_name AS name, creatures.creature_hp AS hp,creatures.creature_ac, creatures.creature_speed,creatures.creature_cr,creatures.description,images.imageURL,stats.strength, stats.dex, stats.con, stats.intell, stats.wis, stats.char  FROM creatures
+        `SELECT creatures.creature_id AS id, creatures.creature_name AS name, creatures.creature_hp AS hp,creatures.creature_ac, creatures.creature_speed,creatures.creature_cr,creatures.description,images.imageURL,stats.strength, stats.dex, stats.con, stats.intell, stats.wis, stats.char  FROM creatures
         Join images On creatures.creature_id = images.creature_id
         Join stats ON creatures.creature_id = stats.creature_id
        WHERE creatures.creature_id = ${req.params.id};
@@ -130,5 +130,15 @@ module.exports = {
     `).then(dbRes => {
       res.status(200).send(dbRes[0])
     }).catch((err) => console.log(err))
+  },
+  getAttack: (req, res) => {
+    sequelize.query(`
+      SELECT creatures.creature_name AS name, attacks.attack_name, attacks.to_hit,attacks.die_size,attacks.num_die,attacks.description, stats.strength AS damage FROM creatures
+      JOIN attacks ON creatures.creature_id = attacks.creature_id
+      JOIN stats ON creatures.creature_id = stats.creature_id
+      WHERE creatures.creature_id = ${req.params.id}
+    `).then(dbRes => {
+      res.status(200).send(dbRes[0])
+    }).catch((err)=> console.log(err))
   }
 };

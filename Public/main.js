@@ -27,7 +27,9 @@ const createCreatureCard = (creature) => {
   let creatureDiv = document.createElement("div");
   let changeHp =creature[0].hp//creature[0].hp
   let maxHp = creature[0].hp
+  let idNum = creature[0].id
   creatureDiv.classList.add("creature_div");
+  creatureDiv.setAttribute('data',`${idNum}`)
   creatureDiv.innerHTML = `
     <p>${creature[0].name}</p>
     
@@ -96,12 +98,25 @@ const increment = (e) => {
 
 //-------------------------------------------------------------
 //handle the attack button
-// const attackHandler = (e) => {
+const attackHandler = (e) => {
 
-//   e.preventDefault();
-
+   e.preventDefault();
+  //console.log(monstlist.children[1].attributes.data.textContent)
+  console.log(monstlist.children.length)
+  for(let i = 1; i < monstlist.children.length; i++){
+    let id = monstlist.children[i].attributes.data.textContent;
+    getAttack(id);
+  }
 //    axios.get(`${baseURL}creatures/${id}`).then((res) => makeAttackCard(res.data))
-// };
+ };
+
+ //----------querry's the database to get the info to make an attack------------
+ const getAttack = id => {
+   axios.get(`${baseURL}attacks/${id}`).then((res) => {
+     console.log(res.data)
+   }).catch(err => console.log(err))
+ }
+ //-----------------------------------------------------------------------------
 const submitHandler = (e) => {
   e.preventDefault();
   const monstDropDown = document.getElementById("monster-select");
@@ -136,5 +151,5 @@ getAllCreatures();
 
 //monst_btn.addEventListener("click", getCreature);
 monst_form.addEventListener("submit", submitHandler);
-//attackBtn.addEventListener('click',attackHandler)
+attackBtn.addEventListener('click',attackHandler)
 
