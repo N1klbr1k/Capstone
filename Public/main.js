@@ -13,12 +13,14 @@ const charNum = document.getElementById('charNum')
 const monstDesc = document.getElementById('monst_desc')
 const monstName = document.getElementById('monst_name')
 const attackBtn = document.getElementById('attack_button')
+const resultCont = document.querySelector('.result_container')
 
 const baseURL = "http://localhost:4545/";
 
 //generate a random number between 1 and 20
-const roll20 = () => {
-  randNUM = Math.floor(Math.random() * 20 + 1);
+const rollx = (x) => {
+  let v = Number(x)
+  let randNUM = Math.floor(Math.random() * v + 1);
   return randNUM;
 };
 
@@ -114,10 +116,40 @@ const attackHandler = (e) => {
  const getAttack = id => {
    axios.get(`${baseURL}attacks/${id}`).then((res) => {
      console.log(res.data)
+     makeAttackCard(res.data)
    }).catch(err => console.log(err))
  }
  //-----------------------------------------------------------------------------
-const submitHandler = (e) => {
+const makeAttackCard = attackdata => {
+  let attackRoll = rollx(20) + Number(attackdata[0].to_hit)
+  let damage =Math.floor((attackdata[0].damage-10)/2)
+  let dieRoll = (nRoll, sDie) => {
+    let total =0;
+    for(let i = 0; i < nRoll;i++ ){
+      total = total + rollx(sDie)
+    }
+
+    return total;
+  } 
+  //let damageRolled = dieRoll(attackdata.num_die,attackdata.die_size)
+  let enemyAcCont = document.getElementById('ac__container')
+  let enemyAc = enemyAcCont.selectedIndex;
+  console.log(enemyAc)
+  let hitMessage =document.createElement('p')
+  hitMessage.textContent= ` ${attackRoll} hits doing ${dieRoll(Number(attackdata[0].num_die),Number(attackdata[0].die_size)+damage)}damage. ${attackdata[0].description}`
+  const attackdiv = document.createElement('div')
+  attackdiv.classList.add('attack_div')
+  let missMessage = document.createElement('p')
+  missMessage.textContent =  `${attackRoll} misses` 
+  if(attackRoll > enemyAc){
+    attackdiv.appendChild(hitMessage)
+  } else {
+    attackdiv.appendChild(missMessage)
+  }
+  resultCont.appendChild(attackdiv)
+}
+//---------handles submits from the select monster form-----
+ const submitHandler = (e) => {
   e.preventDefault();
   const monstDropDown = document.getElementById("monster-select");
 
