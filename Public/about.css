@@ -1,0 +1,103 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600&family=Roboto+Condensed:wght@700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(198.69deg, #2A085C 15.58%, #350455 33.3%, #350241 60.99%);
+  }
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 10vh;
+    background: #1F2631;
+
+  }
+
+footer {
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    background: #1F2631;
+    bottom: 0px;
+  }
+ .right_stuff {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    padding: 20px;
+  }
+  #left_stuff {
+      display: flex;
+      justify-content: space-evenly;
+      color:beige;
+      font-size: 50px;
+      box-sizing: border-box;
+      padding: 10px;
+      font-family: 'Roboto Condensed', sans-serif;
+  }
+  p {
+      font-family: 'Roboto Condensed',sans-serif;
+      color: beige;
+      font-weight: 400;
+  }
+  a {
+      text-decoration: none;
+      color: beige;
+  }
+  a:visited {
+      text-decoration: none;
+  }
+  a:hover{
+      cursor: pointer;
+  }

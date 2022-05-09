@@ -140,5 +140,45 @@ module.exports = {
     `).then(dbRes => {
       res.status(200).send(dbRes[0])
     }).catch((err)=> console.log(err))
+  },
+  createCreature: (req, res) => {
+    const{
+      name,
+      hp, 
+      ac,
+      speed,
+      cr,
+      desc,
+      str,
+      dex,
+      con,
+      int,
+      wis,
+      char,
+      attack_name,
+      to_hit,
+      die_size,
+      num_die,
+      description,
+      imageURL,
+      alt_text
+    } = req.body;
+    sequelize.query(`
+      INSERT INTO creatures(creature_name, creature_hp, creature_ac, creature_speed,creature_cr,description)
+      VALUES(${name},${hp},${ac},${speed},${cr},${desc})
+      RETURNING creature_id;
+
+
+      INSERT INTO stats(creature_id, strength, dex, con, intell, wis, char)
+      VALUES(creature_id,${str},${dex},${con},${int},${wis},${char});
+
+      INSERT INTO images(creature_id, imageURL, alt_text)
+      VALUES(creature_id,${imageURL},${alt_text});
+
+      INSERT INTO attacks(creature_id, attack_name,to_hit, die_size,num_die,description)
+      VALUES(creature_id,${attack_name},${to_hit},${die_size},${num_die},${description});
+    `).then( dbRes => {
+      res.status(200).send(dbRes[0])
+    }).catch(err => console.log(err))
   }
 };

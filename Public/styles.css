@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600&family=Roboto+Condensed:wght@700&display=swap');
 html,
 body,
 div,
@@ -132,6 +132,7 @@ body {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
+  background: linear-gradient(198.69deg, #2A085C 15.58%, #350455 33.3%, #350241 60.99%);
 }
 
 header {
@@ -139,6 +140,16 @@ header {
   justify-content: space-between;
   width: 100vw;
   height: 10vh;
+  background: #1F2631;
+}
+#left_stuff {
+  display: flex;
+  justify-content: space-evenly;
+  color: beige;
+  font-size: 50px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .right_stuff {
@@ -146,6 +157,7 @@ header {
   justify-content: space-between;
   width: 200px;
   padding: 20px;
+  color: beige;
 }
 
 .left-section {
@@ -153,23 +165,44 @@ header {
   justify-content: center;
   height: 85vh;
   width: 33vw;
-  background-color: lightcoral;
+ 
 }
 
 .middle-section {
   height: 85vh;
   width: 34vw;
-  background-color: aqua;
+  
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
+.attack-button-stuff {
+  border-radius: 50px;
+  background-color: darkgray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 80px;
+  width: 250px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.attack-button-stuff > h2 {
+  margin-left: 15px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
 
+.attack-button-stuff:hover{
+  background-color: grey;
+}
 .right-section {
   height: 85vh;
   width: 33vw;
-  background-color: aqua;
+  
   display: flex;
   flex-direction: column;
  justify-content: space-around;
@@ -190,10 +223,15 @@ header {
   width: 75%;
   height: 40px;
 }
+p{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
 
 footer {
   width: 100vw;
   height: 5vh;
+  background: #1F2631;
 }
 
 .monster__container {
@@ -325,4 +363,15 @@ footer {
 #dice {
   color: orange;
   font-size: 50px;
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: beige;
+}
+a:visited{
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
 }

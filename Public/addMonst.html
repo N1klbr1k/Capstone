@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d48c78e087.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="addMonst.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="left_stuff">
+          <a href='index.html'><i class="fa-brands fa-wolf-pack-battalion"></i></a>
+          <h1>RUN THE PACK</h1>
+        </div>
+        <div class="right_stuff">
+          <a href='about.html'><p>about</p></a>
+          <a href='addMonst.html'><p>Add Beast</p></a>
+        </div>
+      </header>
+    <section>
+        <div class="form_div">
+            <form>
+                <div id="name_div">
+                    <input type="text" id="name" placeholder="name">
+                </div>
+                <div id="hp_ac">
+                    <input type="text" id="hpInp" placeholder="hp">
+                    <select id="ac_cont"></select> 
+                </div>
+                <div id="hit_div">
+                    <label for="hit_select">enter hit bonus</label>
+                    <select id="hit_select"></select>
+                </div>
+                <div id="speed_CR_div">
+                    <input type="text" id="speed_input" placeholder="speed">
+                    <input type="text" id="CR" placeholder="challenge rating">
+                </div>
+                <div id="creature_desc_div">
+                    <input type="text" id="monst_Desc" placeholder="enter desc.">
+                </div>
+                <div id="stats_div">
+                    <label for="strength_dropdown">str</label>
+                    <select id="strength_dropdown"></select>
+                    <label for="dex_dropdown">dex</label>
+                    <select id="dex_dropdown"></select>
+                    <label for="con_dropdown">con</label>
+                    <select id="con_dropdown"></select>
+                    <label for="int_dropdown">int</label>
+                    <select id="int_dropdown"></select>
+                    <label for="wis_dropdown">wis</label>
+                    <select id="wis_dropdown"></select>
+                    <label for="char_dropdown">char</label>
+                    <select id="char_dropdown"></select>
+                </div>
+                <div id="att_div">
+                    <label for="att_name">Enter attack name:</label>
+                    <input type="text" id="att_name" placeholder="attack name">
+                <label for="die_num">enter number of dice rolled</label>
+                    <select id="die_num"></select>
+                    <label for="die_size">enter dice size</label>
+                    <select id="die_size"></select>
+                    <label for="att_desc">Enter Attack description</label>
+                    <input type="text" id='att_desc' placeholder="description">
+                </div>
+                <div id="Pic_div">
+                    <input type="text" id="imageIn" placeholder="imageURL">
+                    <input type="text" id="alt_text" placeholder="alt text">
+                </div>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="addMonst.js"></script>
+</body>
+</html>
