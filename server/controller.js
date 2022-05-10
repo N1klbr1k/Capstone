@@ -1,9 +1,9 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 
-const { CONNECTION_STRING } = process.env;
+const { DATABASE_URL } = process.env;
 
-const sequelize = new Sequelize(CONNECTION_STRING, {
+const sequelize = new Sequelize( DATABASE_URL, {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
@@ -164,20 +164,25 @@ module.exports = {
       alt_text
     } = req.body;
     sequelize.query(`
-      INSERT INTO creatures(creature_name, creature_hp, creature_ac, creature_speed,creature_cr,description)
-      VALUES(${name},${hp},${ac},${speed},${cr},${desc})
-      RETURNING creature_id;
-
-
+    WITH new_creature AS (
+      INSERT INTO creatures(creature_name,creature_hp, creature_ac, creature_speed, creature_cr, description)
+      VALUES ('${name}',${hp},${ac},'${speed}','${cr}','${desc}')
+      RETURNING creature_id
+    ), new_stat as (
       INSERT INTO stats(creature_id, strength, dex, con, intell, wis, char)
-      VALUES(creature_id,${str},${dex},${con},${int},${wis},${char});
-
-      INSERT INTO images(creature_id, imageURL, alt_text)
-      VALUES(creature_id,${imageURL},${alt_text});
-
-      INSERT INTO attacks(creature_id, attack_name,to_hit, die_size,num_die,description)
-      VALUES(creature_id,${attack_name},${to_hit},${die_size},${num_die},${description});
-    `).then( dbRes => {
+      SELECT creature_id, ${str},${dex},${con},${int},${wis},${char}
+      FROM new_creature
+      RETURNING creature_id
+    ), new_image as (
+    INSERT INTO images(creature_id, imageURL, alt_text)
+    SELECT creature_id, '${imageURL}', '${alt_text}'
+    FROM new_stat
+    RETURNING creature_id
+    )
+    INSERT INTO attacks(creature_id, attack_name,to_hit, die_size,num_die,description )
+    SELECT creature_id, '${attack_name}', ${to_hit},${die_size},${num_die}, '${description}'
+    FROM new_image;
+      `).then( dbRes => {
       res.status(200).send(dbRes[0])
     }).catch(err => console.log(err))
   }

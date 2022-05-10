@@ -133,6 +133,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   background: linear-gradient(198.69deg, #2A085C 15.58%, #350455 33.3%, #350241 60.99%);
+  align-items: center;
 }
 
 header {
@@ -165,7 +166,8 @@ header {
   justify-content: center;
   height: 85vh;
   width: 33vw;
- 
+  align-items: center;
+  color: beige;
 }
 
 .middle-section {
@@ -179,9 +181,9 @@ header {
 }
 .attack-button-stuff {
   border-radius: 50px;
-  background-color: darkgray;
+  background: linear-gradient(180deg, #37404F 7.6%, #2A313D 41.46%, #151920 87.81%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 80px;
+  height: 75px;
   width: 250px;
   box-sizing: border-box;
   margin-top: 20px;
@@ -189,15 +191,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-style: none;
+  color: beige;
+  box-shadow: 5px 5px 17px black;
 }
 .attack-button-stuff > h2 {
   margin-left: 15px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
+  border-style: none;
+  
 }
 
 .attack-button-stuff:hover{
-  background-color: grey;
+  background: #37404F;
+  color: #1F2631;
+  cursor: pointer;
 }
 .right-section {
   height: 85vh;
@@ -215,7 +224,8 @@ header {
 }
 #skull {
   font-size: 150px;
-
+  color:#2A313D;
+  text-shadow: 3px 3px 15px #151920;
 }
 .enemy_ac_container { 
   display: flex;
@@ -239,32 +249,39 @@ footer {
   height: 70vh;
   width: 400px;
   margin: 100px 100px 100px 150px;
-  background-color: gray;
+  background-color: #1F2631;
   border-radius: 30px;
   flex-direction: column;
   overflow: overlay;
   min-width: 300px;
+
 }
 
 .monster_info_container {
   display: flex;
-  height: 500px;
+  height: 450px;
   width: 300px;
   flex-direction: column;
-  background-color: gray;
+  background-color: #1F2631;
   border-radius: 30px;
-
+  box-sizing: border-box;
+  padding: 15px;
+  color: beige;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .result_container {
   display: flex;
   height: 300px;
   width: 50%;
-  background-color: grey;
+  background-color: #1F2631;
   border-radius: 30px;
   margin: 0px 0px 30px;
   flex-direction: column;
   overflow: overlay;
+  color: beige;
+  box-sizing: border-box;
+  padding: 15px;
 }
 .attack_div{
   height: fit-content;
@@ -277,34 +294,35 @@ footer {
   width: 90%;
   margin: 15px 15px 15px 15px;
   padding: 20px;
-  background-color: lightblue;
+  background: linear-gradient(180deg, #6B7381 0%, #353E4D 53.44%, #0F141C 100%);
   border-radius: 15px;
   justify-content: space-between;
   box-sizing: border-box;
   align-items: center;
+  box-shadow: 3px 3px 15px black;
 }
 
 .creature_div {
   display: flex;
   justify-content: space-around;
-  background-color: aliceblue;
-  height: 100px;
+  background: linear-gradient(180deg, #545E64 0.01%, #50595F 11.98%, #2F3A41 100%);
+  
   width: 90%;
   margin: 15px 15px 15px 15px;
   align-items: center;
   box-sizing: content-box;
   border-radius: 25px;
-  min-height: 100px;
+  min-height: 75px;
+  box-shadow: 3px 3px 15px black;
 }
 
 .creature_container {
   display: flex;
   flex-direction: row;
 }
-.monstName {
-  height: 50px;
-  background-color: brown;
-  width: 100%;
+#monst_name {
+  margin-bottom: 5px;
+  margin-left: 3px;
 }
 .monstPic_monstStats {
   height: 250px;
@@ -316,9 +334,10 @@ footer {
 #monstPic {
   height: 50%;
   width: 100%;
-  background-color: bisque;
+  
   max-width: 100%;
   max-height: 350px;
+  border-radius: 15px;
 }
 
 .monstStats {
@@ -335,24 +354,29 @@ footer {
 }
 
 .monstStats  > div{
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
   margin: 15px;
-  width: 50px;
+  width: 60px;
   border-radius: 30px;
-  background-color: azure;
-  height: 40px;
-
+  background-color: #2F3A41;
+  height: 30px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 6px;
 } 
 .monst_desc {
   display: flex;
  padding: 10px ;
   background-color: blueviolet;
- height: 80px;
+ height: 70px;
  width: 95%;
  box-sizing: border-box;
  margin-left: 7px;
  white-space: normal;
  overflow: overlay;
+ font-family: Arial, Helvetica, sans-serif;
 }
 
 .monst_form {
@@ -361,7 +385,7 @@ footer {
   width: 100%;
 }
 #dice {
-  color: orange;
+  color: #1C75B0;
   font-size: 50px;
   margin-right: 10px;
 }
@@ -374,4 +398,47 @@ a:visited{
 }
 a:hover {
   cursor: pointer;
+}
+.line {
+  height: 2px;
+  width: 90%;
+  background-color: #37404F;
+  margin: 10px 5px 10px 7px;
+}
+
+select {
+  background: linear-gradient(180deg, #151920 0%, #30363E 68.54%, #37404F 100%);
+  border-radius: 15px;
+  border-style: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #2F3A41;
+  color: beige;
+}
+
+button {
+  border-radius: 15px;
+  background-color: beige;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-style: none;
+  color:#2A313D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:hover{
+  background-color:#2A313D;
+  color: beige;
+  cursor: pointer;
+}
+
+#submitBtn {
+  border-radius: 5px;
+  background: linear-gradient(180deg, #151920 0%, #30363E 68.54%, #37404F 100%);
+  color: beige;
+  
+}
+
+#submitBtn:hover{
+  cursor: pointer;
+  background-color: #0F141C;
 }

@@ -146,6 +146,9 @@ const makeAttackCard = attackdata => {
   } else {
     attackdiv.appendChild(missMessage)
   }
+  const line = document.createElement('div')
+  line.classList.add('line')
+  attackdiv.appendChild(line)
   resultCont.appendChild(attackdiv)
 }
 //---------handles submits from the select monster form-----

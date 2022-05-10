@@ -40,34 +40,36 @@ addOptions(charDrop, 20)
 addOptions(wisDrop, 20)
 addOptions(intDrop, 20)
 
-const createCreature = formData => {
+const createCreature = () => {
+
     body = {
         name:  creatureName.value,
-        hp: hpInput.value, 
-        ac: acDrop.value,
+        hp: +hpInput.value, 
+        ac: +acDrop.value,
         speed: speedIn.value,
         cr: crIn.value,
         desc: monstDesc.value,
-        str: strDrop.value,
-        dex: dexDrop.value,
-        con: conDrop.value,
-        int: intDrop.value,
-        wis: wisDrop.value,
-        char: charDrop.value,
+        str: +strDrop.value,
+        dex: +dexDrop.value,
+        con: +conDrop.value,
+        int: +intDrop.value,
+        wis: +wisDrop.value,
+        char: +charDrop.value,
         attack_name: attName.value,
-        to_hit: hitSelect.value,
-        die_size: dieSize.value,
-        num_die: dieNum.value,
-        description:attDesc.value,
+        to_hit: +hitSelect.value,
+        die_size: +dieSize.value,
+        num_die: +dieNum.value,
+        description: attDesc.value,
         imageURL: imageURL.value,
         alt_text:altText.value
         }
-    app.post(`http://localhost:4545/creatures`,body).then(res => {console.log(res, 1)}).catch(err => console.log(err))
+    axios.post(`http://localhost:4545/creatures`,body).then(res => {console.log(res, 1)}).catch(err => console.log(err))
 }
 
 const submitHandler = e => {
-    e.preventDefault
-
+    e.preventDefault()
+    console.log(e.target);
+    createCreature(e);
 }
 
 monstForm.addEventListener('submit', submitHandler)

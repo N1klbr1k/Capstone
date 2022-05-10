@@ -12,3 +12,14 @@ URI
 postgres://giscvjvskcbmdr:a9d546f9ed35605822663891615bd3516475ab8fcf32c25209161c7fd0df338b@ec2-52-3-200-138.compute-1.amazonaws.com:5432/d2nimfn79k7pqm
 Heroku CLI
 heroku pg:psql postgresql-silhouetted-92665 --app nl-creature-database
+
+
+
+
+INSERT INTO images(creature_id, imageURL, alt_text)
+      SELECT creature_id,'${imageURL}','${alt_text}'
+      FROM new_creature
+
+      INSERT INTO attacks(creature_id, attack_name,to_hit, die_size,num_die,description)
+      SELECT creature_id,'${attack_name}',${to_hit},${die_size},${num_die},'${description}'
+      FROM new_creature;

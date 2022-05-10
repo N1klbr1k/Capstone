@@ -48,18 +48,23 @@ table {
 	border-spacing: 0;
 }
 header {
+    position: absolute;
+    top: 0px;
     display: flex;
     justify-content: space-between;
     width: 100vw;
     height: 10vh;
     background: #1F2631;
+    align-self: start;
   }
   body {
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
     background: linear-gradient(198.69deg, #2A085C 15.58%, #350455 33.3%, #350241 60.99%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   footer {
     position: absolute;
@@ -93,4 +98,41 @@ a:visited {
 }
 a:hover{
     cursor: pointer;
+}
+.form_div{
+  width: 50vw;
+  height: 60vh;
+  display: flex;
+  justify-content: space-evenly;
+  
+  align-items: stretch;
+  background-color: #1F2631;
+  box-sizing: border-box;
+  padding: 15px 15px 15px 15px;
+  color: beige;
+  border-radius: 25px;
+  box-shadow: 10px 10px 15px black;
+}
+
+#stats_div {
+  height: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+#stats_div > select {
+  margin: 30px;
+}
+
+#att_div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-left: 10px;
+  position: relative;
 }
