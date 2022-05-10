@@ -4,7 +4,13 @@ const Sequelize = require("sequelize");
 const { DATABASE_URL } = process.env;
 
 const sequelize = new Sequelize( DATABASE_URL, {
-  dialect: "postgres"
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+        rejectUnauthorized: false
+        //wouldn't want this in a live application
+    }
+}
   
 });
 
