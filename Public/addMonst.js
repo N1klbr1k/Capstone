@@ -63,7 +63,7 @@ const createCreature = () => {
         imageURL: imageURL.value,
         alt_text:altText.value
         }
-    axios.post(`http://localhost:4545/creatures`,body).then(res => {console.log(res, 1)}).catch(err => console.log(err))
+    axios.post(`/creatures`,body).then(res => {console.log(res, 1)}).catch(err => console.log(err))
 }
 
 const submitHandler = e => {
