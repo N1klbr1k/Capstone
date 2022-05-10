@@ -155,9 +155,11 @@ const makeAttackCard = attackdata => {
  const submitHandler = (e) => {
   e.preventDefault();
   const monstDropDown = document.getElementById("monster-select");
+  //console.log('data is' + monstDropDown.childNodes[10].innerHTML.data)
+  //console.log('index is' + Number(monstDropDown.selectedIndex));
 
-  let id = monstDropDown.selectedIndex.value;
-
+  let id = monstDropDown.children[monstDropDown.selectedIndex].value;
+  console.log(monstDropDown.children[monstDropDown.selectedIndex].value)
   getCreature(id);
 };
 
@@ -165,7 +167,7 @@ const getCreature = (id) => {
   axios.get(`/creatures/${id}`)
     .then((res) => {
       createCreatureCard(res.data);
-      console.log(res.data)
+      //console.log(res.data)
     })
     .catch((err) => console.log(err));
 };
