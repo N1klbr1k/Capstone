@@ -114,7 +114,7 @@ const attackHandler = (e) => {
 
  //----------querry's the database to get the info to make an attack------------
  const getAttack = id => {
-   axios.get(`${baseURL}attacks/${id}`).then((res) => {
+   axios.get(`/attacks/${id}`).then((res) => {
      console.log(res.data)
      makeAttackCard(res.data)
    }).catch(err => console.log(err))
@@ -162,7 +162,7 @@ const makeAttackCard = attackdata => {
 };
 
 const getCreature = (id) => {
-  axios.get(`${baseURL}creatures/${id}`)
+  axios.get(`/creatures/${id}`)
     .then((res) => {
       createCreatureCard(res.data);
       console.log(res.data)
@@ -171,7 +171,7 @@ const getCreature = (id) => {
 };
 //gets all creatures so they can be displayed in the drop down
 const getAllCreatures = () => {
-  axios.get(`http://localhost:4545/creatures`).then((res) => {
+  axios.get(`/creatures/`).then((res) => {
     // console.log(res.data)
    for (let i = 0; i < res.data.length; i++) {
        

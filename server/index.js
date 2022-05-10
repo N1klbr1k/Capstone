@@ -12,24 +12,12 @@ const { seed, getCreature, createCreature,getAllCreatures,getAttack } = require(
 
 app.use(express.json());
 app.use(cors());
+const port = process.env.PORT || 4545
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,"../public/index.html"))
-})
 
-app.get('/styles', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/styles.css'))
-})
-
-app.get('/js',(req, res) => {
-    res.sendFile(path.join(__dirname, "../public/main.js"))
-})
 //----middleware -------
-   app.use('/js',express.static(path.join(__dirname,'../public/main.js')));
-   
-   app.use('/styles',express.static(path.join(__dirname,'../public/styles.css')))
-
-   app.use('/', express.static(path.join(__dirname, '../public/index.html')));
+  
+   app.use(express.static(path.join(__dirname, '../public')));
 
     
 //seed the database
@@ -45,6 +33,5 @@ app.get('/creatures',getAllCreatures);
 
 app.post("/creatures", createCreature);
 
-const port = process.env.PORT || 4545
 
 app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`));
