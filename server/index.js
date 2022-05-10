@@ -14,22 +14,22 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,"./public/index.html"))
+    res.sendFile(path.join(__dirname,"../public/index.html"))
 })
 
 app.get('/styles', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/styles.css'))
+    res.sendFile(path.join(__dirname, '../public/styles.css'))
 })
 
 app.get('/js',(req, res) => {
-    res.sendFile(path.join(__dirname, "./public/main.js"))
+    res.sendFile(path.join(__dirname, "../public/main.js"))
 })
 //----middleware -------
-   app.use('/js',express.static(path.join(__dirname,'public/main.js')));
+   app.use('/js',express.static(path.join(__dirname,'../public/main.js')));
    
-   app.use('/styles',express.static(path.join(__dirname,'./public/styles.css')))
+   app.use('/styles',express.static(path.join(__dirname,'../public/styles.css')))
 
-   app.use('/', express.static(path.join(__dirname, './public/index.html')));
+   app.use('/', express.static(path.join(__dirname, '../public/index.html')));
 
     
 //seed the database
