@@ -29,9 +29,11 @@ app.get('/js',(req, res) => {
    
    app.use('/styles',express.static(path.join(__dirname,'./public/styles.css')))
 
+   app.use('/', express.static(path.join(__dirname, './public/index.html')));
+
     
 //seed the database
-//app.post("/seed", seed);
+app.post("/seed", seed);
 
 //get a creature
 app.get("/creatures/:id", getCreature);
