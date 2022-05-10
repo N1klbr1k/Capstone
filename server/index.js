@@ -16,12 +16,12 @@ app.use(cors());
 
 //----middleware -------
 
-app.use(express.static(path.join(__dirname, '../public')));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
+});
 
+app.use(express.static(path.join(__dirname, '../public')));
 
 //seed the database
 app.post("/seed", seed);
@@ -38,4 +38,4 @@ app.post("/creatures", createCreature);
 
 const port = process.env.PORT || 4545
 
-app.listen(port, () => console.log(`listening on port ${SERVER_PORT}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
