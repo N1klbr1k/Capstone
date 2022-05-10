@@ -156,7 +156,7 @@ const makeAttackCard = attackdata => {
   e.preventDefault();
   const monstDropDown = document.getElementById("monster-select");
 
-  let id = monstDropDown.selectedIndex;
+  let id = monstDropDown.selectedIndex.value;
 
   getCreature(id);
 };
