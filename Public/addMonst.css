@@ -78,6 +78,7 @@ header {
     justify-content: space-evenly;
     color: beige;
     font-size: 50px;
+    align-items: center;
     box-sizing: border-box;
     padding: 10px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -88,6 +89,7 @@ header {
     width: 200px;
     padding: 20px;
     color: beige;
+    align-items: center;
   }
   a {
     text-decoration: none;
@@ -105,34 +107,71 @@ a:hover{
   display: flex;
   justify-content: space-evenly;
   
-  align-items: stretch;
+  flex-direction: column;
   background-color: #1F2631;
   box-sizing: border-box;
   padding: 15px 15px 15px 15px;
   color: beige;
+  font-family: 'Roboto condensed', sans-serif;
   border-radius: 25px;
   box-shadow: 10px 10px 15px black;
 }
 
 #stats_div {
-  height: 150px;
+  height: 125px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   width: 50%;
+  margin-bottom: 15px;
 }
 
-#stats_div > select {
+#stats_div > div {
   margin: 30px;
 }
 
-#att_div {
+.att_div {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 15px;
   margin-left: 10px;
   position: relative;
+  height: 75px;
+}
+
+.att_div > select {
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.att_div > input {
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+form > div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#submit {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 70px;
+  background-color: beige;
+  color: #1F2631;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#submit:hover {
+  background-color: #1F2631;
+  color: beige;
 }

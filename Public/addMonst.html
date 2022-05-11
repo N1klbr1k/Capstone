@@ -23,10 +23,13 @@
         <div class="form_div">
             <form>
                 <div id="name_div">
+                    <label for="name">Enter creature name:</label>
                     <input type="text" id="name" placeholder="name">
                 </div>
                 <div id="hp_ac">
+                    <label for="hpInp">Enter Hp:</label>
                     <input type="text" id="hpInp" placeholder="hp">
+                    <label for="ac_cont">Enter AC:</label>
                     <select id="ac_cont"></select> 
                 </div>
                 <div id="hit_div">
@@ -34,27 +37,42 @@
                     <select id="hit_select"></select>
                 </div>
                 <div id="speed_CR_div">
+                    <label for="speed_input">Enter Speed:</label>
                     <input type="text" id="speed_input" placeholder="speed">
+                    <label for="CR">Enter Challenge rating:</label>
                     <input type="text" id="CR" placeholder="challenge rating">
                 </div>
                 <div id="creature_desc_div">
+                    <label for="monst_Desc">Enter Creature Description:</label>
                     <input type="text" id="monst_Desc" placeholder="enter desc.">
                 </div>
                 <div id="stats_div">
-                    <label for="strength_dropdown">str</label>
-                    <select id="strength_dropdown"></select>
-                    <label for="dex_dropdown">dex</label>
-                    <select id="dex_dropdown"></select>
-                    <label for="con_dropdown">con</label>
-                    <select id="con_dropdown"></select>
-                    <label for="int_dropdown">int</label>
-                    <select id="int_dropdown"></select>
-                    <label for="wis_dropdown">wis</label>
-                    <select id="wis_dropdown"></select>
-                    <label for="char_dropdown">char</label>
-                    <select id="char_dropdown"></select>
+                    <div>
+                        <label for="strength_dropdown">str</label>
+                        <select id="strength_dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="dex_dropdown">dex</label>
+                        <select id="dex_dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="con_dropdown">con</label>
+                        <select id="con_dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="int_dropdown">int</label>
+                        <select id="int_dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="wis_dropdown">wis</label>
+                        <select id="wis_dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="char_dropdown">char</label>
+                        <select id="char_dropdown"></select>
+                    </div>
                 </div>
-                <div id="att_div">
+                <div class="att_div">
                     <h1>Enter an attack</h1>
                     <label for="att_name">Enter attack name:</label>
                     <input type="text" id="att_name" placeholder="attack name">
@@ -66,10 +84,11 @@
                     <input type="text" id='att_desc' placeholder="description">
                 </div>
                 <div id="Pic_div">
+                    <label for="imageIn">Enter Image URL</label>
                     <input type="text" id="imageIn" placeholder="imageURL">
                     <input type="text" id="alt_text" placeholder="alt text">
                 </div>
-                <input type="submit" value="submit">
+                <input type="submit" id='submit' value="submit">
             </form>
         </div>
     </section>
