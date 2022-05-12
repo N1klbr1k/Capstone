@@ -22,11 +22,11 @@ app.use(cors());
 // });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, '../Public/index.html'))
 })
 
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../Public')));
 //app.use(express.static('node_modules'))
 
 //seed the database
